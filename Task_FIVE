@@ -1,0 +1,42 @@
+"""
+Task Description:
+               Create a pandas DataFrame from a JSON object with nested structures.
+
+Output:
+
+    name                       skills  info.age info.department
+0   John  [communication, leadership]        30              HR
+1  Alice          [coding, debugging]        25              IT
+
+"""
+
+import pandas as pd
+from pandas import json_normalize
+
+# Sample JSON object with nested structure
+json_data = {
+    "employees": [
+        {
+            "name": "John",
+            "info": {
+                "age": 30,
+                "department": "HR"
+            },
+            "skills": ["communication", "leadership"]
+        },
+        {
+            "name": "Alice",
+            "info": {
+                "age": 25,
+                "department": "IT"
+            },
+            "skills": ["coding", "debugging"]
+        }
+    ]
+}
+
+# Flatten the JSON structure and create a DataFrame
+df = json_normalize(json_data['employees'])
+
+# Display the DataFrame
+print(df)
