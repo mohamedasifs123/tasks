@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: Run tests
         run: |
-          cd /opt/mellanox/doca/samples/doca_telemetry/telemetry_export/build
+          cat Task_FIVE
           ./doca_telemetry_export
           
